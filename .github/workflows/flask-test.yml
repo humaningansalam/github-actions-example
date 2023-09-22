@@ -22,11 +22,11 @@ jobs:
       run: docker image build -t myflask-test
 
     - name: Test Flask app
-      run: |
+      run: 
         sleep 10
         curl http:// 127.0.0.1:8001
 
     - name: Stop and remove Docker container
-      run: |
+      run: 
         docker container stop myflask-ac
         docker container rm myflask-ac
