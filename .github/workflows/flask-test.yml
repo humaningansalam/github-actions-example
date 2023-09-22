@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -21,11 +22,11 @@ jobs:
       tun: docker image build -t myflask-test
 
     - name: Test Flask app
-      run:
+      run: |
         sleep 10
         curl http:// 127.0.0.1:8001
 
     - name: Stop and remove Docker container
-      run:
+      run: |
         docker container stop myflask-ac
         docker container rm myflask-ac
